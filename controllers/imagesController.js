@@ -7,7 +7,7 @@ const cloudinary = require('cloudinary');
 
 // try with multer as well
 const multer = require('multer');
-const uploads = multer({ dest: '../tmp/uploads/' });
+const uploads = multer({ dest: 'tmp/uploads/' });
 
 // Databse
 
