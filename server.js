@@ -6,9 +6,15 @@ const imagesController = require('./controllers/imagesController');
 var app = express();
 const cors = require('cors')
 
-
 // allow from all endpoints
-app.use(cors())
+// app.use(cors())
+
+const DEPLOYED_REACT_URL = process.env.DEPLOYED_REACT_URL
+console.log(DEPLOYED_REACT_URL)
+
+// allow from only specific endpoints
+const corsOptions = { origin: ['http:localhost:3000', `${DEPLOYED_REACT_URL}`]}
+app.use(cors(corsOptions))
 
 //app.use(express.static(__dirname + '/public'));
 app.set('port', process.env.PORT || 4000);
